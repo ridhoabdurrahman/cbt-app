@@ -34,7 +34,7 @@ Route::middleware('auth')->group(function () {
         Route::get('/course/students/create/{course}', [CourseStudentController::class, 'create'])->middleware('role:teacher')->name('course.course_students.create');
         Route::post('/course/students/create/save/{course}', [CourseStudentController::class, 'store'])->middleware('role:teacher')->name('course.course_students.store');
 
-        // Route learning student
+        // Routes learning student
         Route::get('/learning/finished/{course}', [LearningController::class, 'learning_finished'])->middleware('role:student')->name('learning.finished.course');
         Route::get('/learning/rapport/{course}', [LearningController::class, 'learning_rapport'])->middleware('role:student')->name('learning.rapport.course');
         Route::get('/learning', [LearningController::class, 'index'])->middleware('role:student')->name('learning.index');
